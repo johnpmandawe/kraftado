@@ -46,62 +46,63 @@ html {
 
 #site-header {
   position: sticky;
-  height: 100px;
+  height: 70px;
   width: 100%;
-  top: 0rem;
+  top: 0px;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 1rem;
+  padding: 0px 10px;
   background-color: var(--ff-dark);
   border-bottom: 1px solid var(--ff-light);
   z-index: 10;
 }
 #site-logo {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   margin-top: auto;
 }
-#header-menu {
-  gap: 3rem;
-}
 #header-menu li a {
   display: block;
   width: 90px;
-  color: var(--ff-light);
+  font-size: 13px;
+  margin: 0px 25px 0px 0px;
   text-transform: uppercase;
   text-align: center;
-  border-radius: 5px;
-  letter-spacing: 0.05rem;
+  letter-spacing: 1px;
+  color: var(--ff-light);
+}
+#header-menu li a.last-child {
+  margin: unset;
 }
 label,
 #check {
   display: none;
-  padding: 0.4rem 0.3rem;
-  border-radius: 0.3rem;
+  padding: 5px 3px;
+  border-radius: 5px;
   background-color: var(--ff-light);
-  box-shadow: 0.1rem 0.1rem 0.1rem var(--bs-dark);
+  box-shadow: 2px 2px 2px var(--bs-dark);
 }
 .line {
   display: block;
-  padding: 0.1rem 0.7rem;
-  border-radius: 0.2rem;
+  padding: 1.5px 12px;
+  border-radius: 3px;
   background-color: var(--ff-dark);
   transition: 0.3s ease;
 }
 .two {
-  margin: 0.2rem 0rem;
+  margin: 3px 0px;
 }
 #check:checked ~ label .one {
-  transform: translateY(0.4rem) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
 #check:checked ~ label .two {
   opacity: 0;
 }
 #check:checked ~ label .three {
-  transform: translateY(-0.4rem) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* MAIN */
@@ -110,7 +111,6 @@ label,
   position: relative;
   flex-direction: column;
   padding: 4rem 0rem;
-  gap: 4rem;
   width: 100%;
   height: auto;
   background: url(../img/bg-img.jpg) no-repeat fixed center;
@@ -127,13 +127,18 @@ label,
   bottom: 0;
   z-index: -1;
 }
-#banner,
+.sections {
+  width: 100%;
+  background-color: var(--bg-dark-opac);
+  margin: 0px auto 70px auto;
+}
 #about,
-#products,
-#feedback,
-#contact {
-  width: min(100%, 650px);
-  background-color: var(--ff-dark);
+#feedback {
+  width: min(650px, 100%);
+  border-radius: 0.5rem;
+}
+.sections:last-child {
+  margin: unset;
 }
 #about,
 #products,
@@ -141,30 +146,21 @@ label,
 #contact {
   padding: 1rem;
 }
-#banner,
-#feedback {
-  border-radius: 0rem 2rem 2rem 0rem;
-}
 #banner {
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
 }
 #quote {
-  font-size: 2.5rem;
-  line-height: 4rem;
+  font-size: 4vw;
+  line-height: 8vw;
   color: var(--ff-light);
   text-transform: uppercase;
 }
 #author {
-  font-size: 2.5rem;
+  font-size: 3.5vw;
   padding-top: 1rem;
   color: var(--ff-light);
   text-align: right;
-}
-#about,
-#contact {
-  margin-left: auto;
-  border-radius: 2rem 0rem 0rem 2rem;
 }
 #about-content {
   color: var(--ff-light);
@@ -180,7 +176,7 @@ label,
   padding: 1rem 0rem;
 }
 .slider-imgs {
-  margin: 0rem 5px;
+  margin: 0px 5px;
   height: 400px;
   border-radius: 0.5rem;
 }
@@ -230,10 +226,10 @@ td span {
   color: var(--ff-light);
   padding: 1rem 0rem;
   align-items: center;
-  gap: 0.3rem;
 }
 .contact-icon {
   font-size: 1.7rem;
+  margin-right: 0.5rem;
 }
 /* MODIFYING SLICK CLASSES */
 
@@ -266,6 +262,7 @@ td span {
   padding: 4rem 0rem;
   align-items: center;
   justify-content: center;
+  margin-top: auto;
   background-color: var(--ff-dark);
   border-top: 1px solid var(--ff-light);
 }
@@ -281,9 +278,9 @@ td span {
   #header-menu {
     position: fixed;
     width: 100%;
-    top: 100px;
+    top: 70px;
     left: -100%;
-    padding: 1rem;
+    padding: 25px 10px;
     flex-direction: column;
     transition: left 0.3s ease-in-out;
     background-color: var(--ff-dark);
@@ -292,6 +289,7 @@ td span {
   }
   #header-menu li a {
     text-align: unset;
+    margin: 0px 0px 25px 0px;
   }
   label {
     display: block;
@@ -301,9 +299,12 @@ td span {
   }
 }
 @media (max-width: 650px) {
-  #quote,
+  #quote {
+    font-size: 8vw;
+    line-height: 13vw;
+  }
   #author {
-    font-size: 6vw;
+    font-size: 5.5vw;
   }
   .slider-imgs {
     height: 60vw;
